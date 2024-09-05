@@ -2,6 +2,15 @@ from flask import Flask, render_template, Response
 import cv2
 import numpy as np
 from age_gender_detection import AgeGenderDetector
+import gdown
+
+url = 'https://drive.google.com/u/0/uc?id=1UmQZBioHesV4rynJkNugQZFAN15SiPff&export=download'
+output = 'model.h5'
+gdown.download(url, output, quiet=False)
+
+url = 'https://drive.google.com/u/0/uc?id=1Y9q8ybAgeulODUKCSmTD6LiKZCO5x1RB&export=download'
+output = 'model.h5'
+gdown.download(url, output, quiet=False)
 
 app = Flask(__name__)
 
