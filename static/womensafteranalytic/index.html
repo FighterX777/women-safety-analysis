@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Women Safety Analytics</h1>
+    </header>
+
+    <!-- Login Page -->
+    <section id="loginPage" class="page active">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </section>
+
+    <!-- Main Page -->
+    <section id="mainPage" class="page">
+        <h2>Welcome to Women Safety Analytics</h2>
+        <p>Select a feature to learn more about our functionalities and how we help protect women.</p>
+        <ul>
+            <li><button onclick="showPage('personDetectionPage')" class="btn">Person Detection & Gender Classification</button></li>
+            <li><button onclick="showPage('genderDistributionPage')" class="btn">Gender Distribution</button></li>
+            <li><button onclick="showPage('loneWomanPage')" class="btn">Identifying a Lone Woman at Night</button></li>
+            <li><button onclick="showPage('womanSurroundedPage')" class="btn">Detection of a Woman Surrounded by Men</button></li>
+            <li><button onclick="showPage('sosDetectionPage')" class="btn">Recognizing SOS Situation</button></li>
+            <li><button onclick="showPage('hotspotsPage')" class="btn">Identifying Hotspots</button></li>
+        </ul>
+    </section>
+
+    <!-- Person Detection & Gender Classification Page -->
+    <section id="personDetectionPage" class="page">
+        <h2>Person Detection & Gender Classification</h2>
+        <p>Our advanced surveillance system can automatically detect individuals in any given scene. By utilizing deep learning models, the system identifies the gender of each person in real-time. This feature is crucial in monitoring public spaces to ensure that women are not in potentially unsafe environments.</p>
+        <p>Whether in crowded places like subway stations or isolated areas, detecting the presence and distribution of different genders can provide vital information for law enforcement and help in maintaining a secure environment for women.</p>
+        <button class="btn" onclick="runPersonDetection()">Run Detection</button>
+        <div id="resultPersonDetection"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Gender Distribution Page -->
+    <section id="genderDistributionPage" class="page">
+        <h2>Gender Distribution</h2>
+        <p>Understanding the gender distribution in a specific area is essential for evaluating the safety of that environment. This feature counts the number of men and women present in a scene, offering a clear overview of gender balance or imbalance.</p>
+        <p>A higher concentration of men in certain scenarios, such as late at night in isolated areas, can be a cause for concern. By monitoring these metrics, authorities can take proactive measures to ensure the safety of women, particularly in high-risk locations.</p>
+        <button class="btn" onclick="analyzeGenderDistribution()">Run Analysis</button>
+        <div id="resultGenderDistribution"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Identifying a Lone Woman at Night Page -->
+    <section id="loneWomanPage" class="page">
+        <h2>Identifying a Lone Woman at Night</h2>
+        <p>Nighttime can pose increased risks for women, particularly when they are alone in public spaces. This feature is designed to monitor such situations by detecting the presence of a lone woman during late hours.</p>
+        <p>The system uses a combination of video analytics and contextual information, such as the time of day and location, to flag potentially vulnerable situations. Early detection of these scenarios allows for timely intervention, ensuring that help can be provided if necessary.</p>
+        <button class="btn" onclick="identifyLoneWoman()">Run Detection</button>
+        <div id="resultLoneWoman"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Detection of a Woman Surrounded by Men Page -->
+    <section id="womanSurroundedPage" class="page">
+        <h2>Detection of a Woman Surrounded by Men</h2>
+        <p>This feature is designed to detect scenarios where a woman is surrounded by a group of men, which could be a sign of a potentially unsafe situation. The system continuously analyzes video feeds to identify such patterns and raises an alert if the situation is deemed suspicious.</p>
+        <p>In crowded environments, such as public transport or events, this feature ensures that any unusual gathering around a woman is quickly detected, allowing for a rapid response from security personnel.</p>
+        <button class="btn" onclick="detectWomanSurroundedByMen()">Run Detection</button>
+        <div id="resultWomanSurrounded"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Recognizing SOS Situation Page -->
+    <section id="sosDetectionPage" class="page">
+        <h2>Recognizing SOS Situation</h2>
+        <p>Our SOS detection system is equipped with gesture recognition technology to identify distress signals. Whether it's a specific hand gesture or another predefined action, the system is trained to recognize these indicators and trigger an immediate alert to authorities.</p>
+        <p>This feature is particularly useful in situations where verbal communication is not possible, such as during an abduction or a threatening encounter. By recognizing these subtle signals, the system ensures that help is on the way as quickly as possible.</p>
+        <button class="btn" onclick="recognizeSOSSituation()">Run Detection</button>
+        <div id="resultSOSSituation"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Identifying Hotspots Page -->
+    <section id="hotspotsPage" class="page">
+        <h2>Identifying Hotspots</h2>
+        <p>Using historical data and real-time analytics, this feature identifies hotspots—areas where incidents are more likely to occur. By mapping out these high-risk zones, the system helps authorities focus their surveillance efforts and allocate resources more effectively.</p>
+        <p>Hotspots may include poorly lit areas, locations with a history of crimes, or places where the presence of law enforcement is limited. Understanding these patterns enables the creation of safer urban environments, where potential threats are mitigated before they escalate.</p>
+        <button class="btn" onclick="identifyHotspots()">Run Analysis</button>
+        <div id="resultHotspots"></div>
+        <button onclick="showPage('mainPage')" class="btn">Back to Home</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rising Phoenix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
