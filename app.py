@@ -5,11 +5,11 @@ from age_gender_detection import AgeGenderDetector
 import gdown
 
 url = 'https://drive.google.com/u/0/uc?id=1UmQZBioHesV4rynJkNugQZFAN15SiPff&export=download'
-output = 'model.h5'
+output = 'gender_net.caffemodel'
 gdown.download(url, output, quiet=False)
 
 url = 'https://drive.google.com/u/0/uc?id=1Y9q8ybAgeulODUKCSmTD6LiKZCO5x1RB&export=download'
-output = 'model.h5'
+output = 'age_net.caffemodel'
 gdown.download(url, output, quiet=False)
 
 app = Flask(__name__)
@@ -29,4 +29,4 @@ def video_feed():
     return Response(detector.generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(debug=True,threaded=False,host='0.0.0.0')
+    app.run(debug=True)
