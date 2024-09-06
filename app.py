@@ -29,4 +29,4 @@ def video_feed():
     return Response(detector.generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,threaded=False,host="0.0.0.0")
